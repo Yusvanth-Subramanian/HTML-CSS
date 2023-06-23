@@ -1,0 +1,1 @@
+SELECT name AS 'Highest Paid Employee' FROM Employee WHERE emp_id = (SELECT emp_id FROM Salary ORDER BY amount DESC LIMIT 1);

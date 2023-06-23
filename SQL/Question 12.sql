@@ -1,0 +1,1 @@
+SELECT e.emp_id, e.name FROM Employee e JOIN EmployeeLeave el ON e.emp_id = el.emp_id WHERE DATEDIFF(el.end_date, el.start_date) = 1

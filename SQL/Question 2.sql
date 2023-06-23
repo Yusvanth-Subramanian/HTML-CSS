@@ -1,0 +1,1 @@
+SELECT name AS 'Employee name' FROM Employee JOIN Salary ON Employee.emp_id = Salary.emp_id WHERE amount > (SELECT AVG(amount) FROM Salary)

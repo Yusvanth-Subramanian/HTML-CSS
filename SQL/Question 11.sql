@@ -1,0 +1,1 @@
+SELECT e.name AS "Employee Name" , d.dept_name AS "Department Name" FROM Employee e JOIN Department d ON e.dept_id = d.dept_id JOIN Salary s on e.emp_id = s.emp_id WHERE s.amount > 400000

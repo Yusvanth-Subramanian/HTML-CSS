@@ -1,0 +1,1 @@
+SELECT e.name AS 'Employee name' , a.city FROM Employee e JOIN Address a ON e.emp_id=a.emp_id WHERE a.city = 'Chennai'

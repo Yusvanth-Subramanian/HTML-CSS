@@ -1,0 +1,1 @@
+SELECT a.name as 'Employee Name' , b.name as 'Reports to' FROM Employee a JOIN Employee b WHERE b.emp_id = a.reports_to

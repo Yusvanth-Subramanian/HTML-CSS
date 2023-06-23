@@ -1,0 +1,1 @@
+SELECT d.dept_name AS "Department Name" , e.name AS "Employee Name" FROM Employee e JOIN Department d WHERE dept_name = 'Development'

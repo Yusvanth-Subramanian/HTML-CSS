@@ -1,0 +1,1 @@
+SELECT name as 'Employee name' FROM Employee where job_title = 'Manager'

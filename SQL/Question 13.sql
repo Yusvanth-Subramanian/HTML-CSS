@@ -1,0 +1,2 @@
+
+SELECT e.name as "Employee Name" , DATEDIFF(el.end_date,el.start_date) AS 'Days Absent' FROM Employee e JOIN Department d on e.dept_id = d.dept_id join Salary s on e.emp_id = s.emp_id join EmployeeLeave el on e.emp_id = el.emp_id where d.dept_name = "Development" and s.amount >300000
