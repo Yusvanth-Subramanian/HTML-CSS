@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            font-weight: bold;
+        }
+        input{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input{
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 45%;
+        }
+        .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+        .heading{
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="heading">Enter Employee Details :</div>
+    <form action="#" th:action="@{/validate-employee}" method="post" th:object="${employee}">
+        <div class="form-group">
+            <label for="name">Name :</label>
+            <input type="text" class="form-control" placeholder="e.g Yusvanth" th:field="*{name}" name="name" id="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="text" class="form-control" placeholder="e.g yusvanth@gmail.com" th:field="*{email}" name="email" id="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password :</label>
+            <input type="text" class="form-control" placeholder="e.g Abcd@123" th:field="*{password}" name="password" id="password">
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password :</label>
+            <input type="text" class="form-control" placeholder="" th:field="*{confirmPassword}" name="confirmPassword" id="confirmPassword">
+        </div>
+        <div class="form-group">
+            <label for="designation">Designation :</label>
+            <input type="text" class="form-control" placeholder="e.g Software Developer" th:field="*{designation}" name="designation" id="designation">
+        </div>
+        <div class="form-group">
+            <label for="mobileNumber">Mobile Number :</label>
+            <input type="text" class="form-control" placeholder="e.g 0123456789" th:field="*{mobileNumber}" name="mobileNumber" id="mobileNumber">
+        </div>
+        <div class="form-group">
+            <label for="address">Address :</label>
+            <input type="text" class="form-control" placeholder="e.g Perungudi, Chennai" th:field="*{address}" name="address" id="address">
+        </div>
+        <div class="form-group">
+            <label for="department">Department :</label>
+            <input type="text" class="form-control" placeholder="e.g DEV" th:field="*{department}" name="department" id="department">
+        </div>
+        <p class="error-message" th:text="${errorMsg}"></p>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+</div>
+</body>
+</html>

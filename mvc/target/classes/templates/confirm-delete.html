@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    h4{
+      position: absolute;
+      margin-top: -670px;
+      margin-left: 50px;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .employee-info {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    label {
+      font-weight: bold;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+    #back {
+
+      margin-left: 47%;
+    }
+    #Confirm {
+      margin-left: 46%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<h4>Are you sure to delete this record ?</h4>
+<div class="container">
+  <div class="employee-info">
+    <label>Name:</label>
+    <p th:text="${employee.name}"></p>
+  </div>
+  <div class="employee-info">
+    <label>Email:</label>
+    <p th:text="${employee.email}"></p>
+  </div>
+  <div class="employee-info">
+    <label>Designation:</label>
+    <p th:text="${employee.designation}"></p>
+  </div>
+  <div class="employee-info">
+    <label>Department:</label>
+    <p th:text="${employee.department}"></p>
+  </div>
+  <div class="employee-info">
+    <label>Mobile Number:</label>
+    <p th:text="${employee.mobileNumber}"></p>
+  </div>
+  <div class="employee-info">
+    <label>Address:</label>
+    <p th:text="${employee.address}"></p>
+  </div><br><br>
+  <a th:href="@{/home}" id="back" class="btn btn-info">Back</a><br>
+  <a th:href="@{/confirm-delete/{id}(id=${employee.id})}" id="Confirm" class="btn btn-danger">Confirm</a>
+</div>
+</body>
+</html>

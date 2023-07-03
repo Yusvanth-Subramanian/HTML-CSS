@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        table {
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        .actions {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+<div class="d-flex justify-content-between">
+    <a class="btn btn-primary" th:href="@{/create}">Add Employee</a>
+    <a class="btn btn-danger" th:href="@{/logout}">Logout</a>
+</div>
+<br>
+<br>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Designation</th>
+        <th>Mobile Number</th>
+        <th>Address</th>
+        <th>Department</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.email}"></td>
+        <td th:text="${employee.designation}"></td>
+        <td th:text="${employee.mobileNumber}"></td>
+        <td th:text="${employee.address}"></td>
+        <td th:text="${employee.department}"></td>
+        <td>
+            <div class="actions">
+                <a class="btn btn-success" th:href="@{/view/{id}(id=${employee.id})}">View</a>
+                <a class="btn btn-info" th:href="@{/edit/{id}(id=${employee.id})}">Edit</a>
+                <a class="btn btn-danger" th:href="@{/delete/{id}(id=${employee.id})}">Delete</a>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
